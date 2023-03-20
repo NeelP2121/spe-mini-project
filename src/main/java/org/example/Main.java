@@ -22,7 +22,7 @@ public class Main {
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("-----------------------------------------");
-		System.out.println("--------------------MENU-----------------")
+		System.out.println("--------------------MENU-----------------");
 		System.out.println("-  Select one of the following options :-");
 		System.out.println("-1.) Square Root.                       -");
 		System.out.println("-2.) Factorial.                         -");
@@ -37,17 +37,17 @@ public class Main {
 		switch(choice){
 			case 1:
 				System.out.println("Enter number to calculate Square Root");
-				double input = sc.nextDouble();
+				double inputS = sc.nextDouble();
 				System.out.println();
 				break;
 			case 2:
 				System.out.println("Enter number to calculate Factorial");
-				int input = sc.nextInt();
+				int inputF = sc.nextInt();
 				System.out.println();
 				break;
 			case 3:
 				System.out.println("Enter number to calculate Natural Logarithm");
-				double input = sc.nextDouble();
+				double inputL = sc.nextDouble();
 				System.out.println();
 				break;
 			case 4:
