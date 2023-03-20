@@ -30,6 +30,9 @@ public class Main {
 	}
 
 	public static void main(String[] args){
+		
+		Main obj = new Main();
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("-----------------------------------------");
 		System.out.println("--------------------MENU-----------------");
@@ -48,24 +51,24 @@ public class Main {
 			case 1:
 				System.out.println("Enter number to calculate Square Root");
 				double inputS = sc.nextDouble();
-				System.out.println();
+				System.out.println(obj.calcSqrt(inputS));
 				break;
 			case 2:
 				System.out.println("Enter number to calculate Factorial");
 				int inputF = sc.nextInt();
-				System.out.println();
+				System.out.println(obj.calcFactorial(inputF));
 				break;
 			case 3:
 				System.out.println("Enter number to calculate Natural Logarithm");
 				double inputL = sc.nextDouble();
-				System.out.println();
+				System.out.println(obj.calcLogarithm(inputL));
 				break;
 			case 4:
 				System.out.println("Enter base number in Power");
 				int inputBase = sc.nextInt();
 				System.out.println("\nEnter exponent in Power");
 				int inputExp = sc.nextInt();
-				System.out.println();
+				System.out.println(obj.calcPower(inputBase, inputExp));
 				break;
 			default:
 				System.out.println("-----------------------------------------");
