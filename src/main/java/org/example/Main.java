@@ -4,10 +4,21 @@ import java.lang.Math;
 import java.util.Scanner;
 
 public class Main {
-
+	
+	// Method to calculate square root 
 	public double calcSqrt(double input){
 		return Math.sqrt(input);
 	}
+	
+	//Method to calculate Factorial
+	public long calcFactorial(int input){
+		long val = 1;
+		for(int i = 2; i <= input; i++){
+			val *= i;
+		}
+		return val;
+	}
+
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("-----------------------------------------");
