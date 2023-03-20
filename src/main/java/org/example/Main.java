@@ -24,7 +24,10 @@ public class Main {
 		return Math.log(input);
 	}
 
-
+	// Method to calculate Power
+	public double calcPower(int base, int exp){
+		return Math.pow(base, exp);
+	}
 
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
