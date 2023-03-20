@@ -10,7 +10,7 @@ public class Main {
 		return Math.sqrt(input);
 	}
 	
-	//Method to calculate Factorial
+	// Method to calculate Factorial
 	public long calcFactorial(int input){
 		long val = 1;
 		for(int i = 2; i <= input; i++){
@@ -18,6 +18,13 @@ public class Main {
 		}
 		return val;
 	}
+
+	// Method to calculate Natural Logarithm
+	public double calcLogarithm(double input){
+		return Math.log(input);
+	}
+
+
 
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
