@@ -7,6 +7,5 @@ public class MainTest {
 
     @Test
     public void testFindMax(){
-        assertEquals(2.0,2.0, 0.001);
     }
 }  
