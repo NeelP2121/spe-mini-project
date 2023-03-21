@@ -1,32 +1,59 @@
 package org.example;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.lang.Math;
 import java.util.Scanner;
 
 public class Main {
-	
+
+	private static Logger logger = LogManager.getLogger(Main.class);
+	String wrong = "NOT CALCULATABLE";
 	// Method to calculate square root 
 	public double calcSqrt(double input){
-		return Math.sqrt(input);
+		if(input >= 0){
+			double result = Math.sqrt(input);
+			logger.info("[SQUARE ROOT] - " + input + " - [RESULT] - " + result);
+			return result;
+		}
+		logger.error("[SQUARE ROOT] - " + input + " - [RESULT] - " + wrong);
+		return -1;
 	}
 	
 	// Method to calculate Factorial
 	public long calcFactorial(int input){
-		long val = 1;
-		for(int i = 2; i <= input; i++){
-			val *= i;
+		if(input >=0){
+			long val = 1;
+			for(int i = 2; i <= input; i++){
+				val *= i;
+			}
+			logger.info("[FACTORIAL] - " + input + " - [RESULT] - " + val);
+			return val;
 		}
-		return val;
+		logger.error("[FACTORIAL] - " + input + " - [RESULT] - " + wrong);
+		return -1;
 	}
 
 	// Method to calculate Natural Logarithm
 	public double calcLogarithm(double input){
-		return Math.log(input);
+		if(input > 0){
+			double result = Math.log(input);
+			logger.info("[NATURAL_LOG] - " + input + " - [RESULT] - " + result);
+			return result;
+		}
+		logger.error("[NATURAL_LOG] - " + input + " - [RESULT] - " + wrong);
+		return -1;
 	}
 
 	// Method to calculate Power
 	public double calcPower(int base, int exp){
-		return Math.pow(base, exp);
+		if(base == 0 && exp == 0){
+			logger.error("[POWER] - " + base + " " + exp + " - [RESULT] - " + wrong);
+			return -1;
+		}
+		double result = Math.pow(base, exp);
+		logger.info("[POWER] - " + base + " " + exp + " - [RESULT] - " + result);
+		return result;
 	}
 
 	public static void main(String[] args){
@@ -52,30 +79,36 @@ public class Main {
 				case 1:
 					System.out.println("Enter number to calculate Square Root");
 					double inputS = sc.nextDouble();
-					System.out.println(obj.calcSqrt(inputS));
+					double resS = obj.calcSqrt(inputS);
+					System.out.println(resS == -1 ? "Invalid input" : resS);
 					break;
 				case 2:
 					System.out.println("Enter number to calculate Factorial");
 					int inputF = sc.nextInt();
-					System.out.println(obj.calcFactorial(inputF));
+					long resF = obj.calcFactorial(inputF);
+					System.out.println(resF == -1 ? "Invalid Input" : resF);
 					break;
 				case 3:
 					System.out.println("Enter number to calculate Natural Logarithm");
 					double inputL = sc.nextDouble();
-					System.out.println(obj.calcLogarithm(inputL));
+					double resL = obj.calcLogarithm(inputL);
+					System.out.println(resL == -1 ? "Invalid Input" : resL);
 					break;
 				case 4:
 					System.out.println("Enter base number in Power");
 					int inputBase = sc.nextInt();
 					System.out.println("\nEnter exponent in Power");
 					int inputExp = sc.nextInt();
-					System.out.println(obj.calcPower(inputBase, inputExp));
+					double resP = obj.calcPower(inputBase, inputExp);
+					System.out.println(resP == -1 ? "Invalid Input" : resP);
 					break;
 				case 5:
 					return;
 				default:
 					System.out.println("-----------------------------------------");
 					System.out.println("---Chosen option not existent in menu----");
+					System.out.println("-----------------------------------------");
+					System.out.println();
 			}
 		}
 			
