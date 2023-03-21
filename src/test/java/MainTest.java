@@ -6,6 +6,6 @@ import org.junit.Test;
 public class MainTest {
 
     @Test
-    public void testFindMax()
+    public void testFindMax(){
     }
 }  
