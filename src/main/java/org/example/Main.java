@@ -41,6 +41,7 @@ public class Main {
 			System.out.println("-2.) Factorial.                         -");
 			System.out.println("-3.) Natural Logarithm.                 -");
 			System.out.println("-4.) Power.                             -");
+			System.out.println("-5.) Exit.                              -");
 			System.out.println("-----------------------------------------");
 
 			int choice = sc.nextInt();
@@ -70,6 +71,8 @@ public class Main {
 					int inputExp = sc.nextInt();
 					System.out.println(obj.calcPower(inputBase, inputExp));
 					break;
+				case 5:
+					return;
 				default:
 					System.out.println("-----------------------------------------");
 					System.out.println("---Chosen option not existent in menu----");
